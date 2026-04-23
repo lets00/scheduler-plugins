@@ -1,0 +1,11 @@
+apiVersion: kubescheduler.config.k8s.io/v1beta3
+kind: KubeSchedulerConfiguration
+
+profiles:
+  - schedulerName: last-node-scheduler
+    plugins:
+      score:
+        enabled:
+          - name: LastNodeScorer
+        disabled:
+          - name: "*"
